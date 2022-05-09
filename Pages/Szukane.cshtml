@@ -1,0 +1,21 @@
+﻿@page
+@model Years.Pages.SzukaneModel
+@{
+    ViewData["Title"] = "Ostatnio szukane";
+}
+
+<div class="">
+    <div class="index__form col-6">
+
+        @foreach (var item in Model.Records.People)
+        {
+            <div class="szukane d-flex">
+                    @Html.DisplayFor(modelItem => item.Name)
+                    @Html.DisplayFor(modelItem => item.Surname)
+                <div style="margin-left: auto;">
+                    @Html.DisplayFor(modelItem => item.CreatedTime)
+                </div>
+            </div>
+        }
+    </div>
+</div>
